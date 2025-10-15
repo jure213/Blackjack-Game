@@ -28,8 +28,7 @@ public class BlackjackGame extends Application {
     private Deck deck;
     private Hand dealerHand;
     private Hand playerHand;
-
-    // Betting system variables
+// Betting system variables
     private double playerBalance = 1000.0;
     private double currentBet = 0.0;
     private boolean dealerCardHidden = true; // Track if dealer's second card is hidden
@@ -137,7 +136,23 @@ public class BlackjackGame extends Application {
         gameLayout.setRight(rightStackPane);
 
         gameLayout.setStyle("-fx-background-color: #28734d;");
-        gameLayout.setBottom(title);
+        
+        // Create bottom section with title and exit button
+        BorderPane bottomPane = new BorderPane();
+        bottomPane.setCenter(title);
+        
+        // Create exit button
+        Button exitButton = new Button("EXIT");
+        exitButton.setStyle("-fx-background-color: #8B0000; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold;");
+        exitButton.setOnAction(e -> System.exit(0));
+        
+        HBox exitContainer = new HBox(exitButton);
+        exitContainer.setAlignment(Pos.CENTER_RIGHT);
+        exitContainer.setPadding(new Insets(10, 20, 10, 0));
+        
+        bottomPane.setRight(exitContainer);
+        
+        gameLayout.setBottom(bottomPane);
         BorderPane.setAlignment(title, Pos.CENTER);
 
         return gameLayout;

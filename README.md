@@ -13,7 +13,7 @@ Avtor: Jure Rus, T4C
 
 ## Project Structure
 
-```
+``` bash
 Blackjack-Game/
 ├── src/
 │   └── main/
