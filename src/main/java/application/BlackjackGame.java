@@ -52,7 +52,7 @@ public class BlackjackGame extends Application {
     public void start(Stage primaryStage) {
         initialize();
 
-        Scene startScene = new Scene(createStartLayout(primaryStage), 800, 600);
+        Scene startScene = new Scene(createStartLayout(primaryStage), 1000, 800);
         primaryStage.setTitle("Blackjack Game");
         primaryStage.setScene(startScene);
         primaryStage.show();
@@ -501,7 +501,7 @@ public class BlackjackGame extends Application {
         welcomeLabel.setPadding(new Insets(30, 0, 0, 0));
 
         startButton.setOnAction(event -> {
-            Scene gameScene = new Scene(createGameLayout(), 800, 600);
+            Scene gameScene = new Scene(createGameLayout(), 1000, 800);
             primaryStage.setScene(gameScene);
         });
 
